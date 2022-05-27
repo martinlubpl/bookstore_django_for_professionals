@@ -1,7 +1,7 @@
 <!-- templates/home.html -->
-{% extends '_base.html' %} {% block title %}Home{% endblock title %} {% block content %}
+{% extends '_base.html' %}{% load static %}{% block title %}Home{% endblock title %} {% block content %}
 <h1>Homepage</h1>
-{% if user.is_authenticated %} Hi {{ user.email }}!
+<img class="cover" src="{% static 'img/bullet.jpg' %}" alt="Cover"> {% if user.is_authenticated %} Hi {{ user.email }}!
 <p><a href="{% url 'logout' %}">Log out</a></p>
 {% else %}
 <p>You are not logged in</p>
