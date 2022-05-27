@@ -19,9 +19,15 @@ from django.urls import path, include
 urlpatterns = [
     # admin
     path('admin/', admin.site.urls),
-    # users global
-    path('accounts/', include('django.contrib.auth.urls')),
-    # users local
-    path('accounts/', include('accounts.urls')),
+
+
+    # # users global
+    # path('accounts/', include('django.contrib.auth.urls')),
+    # # users local
+    # path('accounts/', include('accounts.urls')),
+
+    # new allauth path
+    path('accounts/', include('allauth.urls')),
+
     path('', include('pages.urls')),
 ]
