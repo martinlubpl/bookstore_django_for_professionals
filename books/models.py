@@ -14,12 +14,14 @@ class Book(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    cover = models.ImageField(upload_to='covers/', blank=True)
 
     def __str__(self):
         return f"{self.title} by {self.author}"
 
     def get_absolute_url(self):
-        return reverse('book_detail', args=[str(self.id)])
+        # return reverse('book_detail', args=[str(self.id)])
+        return reverse('book_detail', kwargs={'pk': str(self.pk)})
 
 
 class Review(models.Model):
