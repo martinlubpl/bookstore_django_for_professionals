@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}TODO: change email confirmation message{% endblocktrans %}
+{% endautoescape %}
